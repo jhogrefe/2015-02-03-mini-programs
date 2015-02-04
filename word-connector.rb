@@ -4,7 +4,7 @@ require 'active_support/core_ext/array/conversions'
 
 
 class WordConnector
-  
+
   def blue_red_green_merge_with_and(*words)
     words.to_sentence
   end
