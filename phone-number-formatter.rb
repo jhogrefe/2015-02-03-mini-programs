@@ -1,35 +1,48 @@
 require 'pry'
-
+require 'active_support'
+require 'active_support/core_ext/numeric/conversions'
 
 
 class PhoneNumberFormatter
   
-  def get_number(number)
-    @phone_array = number.to_s.split('')
+  def phone_without_parantheses(number)
+    number.to_s(:phone)
+  end
+
+  def phone_with_parantheses(number)
+    number.to_s(:phone, area_code: true)
   end
   
-  def area_code
-    @phone_array.first(3)
-  end
- 
-  def three_digits
-    @phone_array[3..5]
-  end
-  
-  def four_digits
-    @phone_array[6..10]
-  end 
-
-  def format_one
-    puts "(#{area_code.join}) #{three_digits.join}-#{four_digits.join}"
-  end
-
-  def format_two
-    puts "#{area_code.join}-#{three_digits.join}-#{four_digits.join}"
-  end
-
 end
-  
+
+#COMPLETE - WORKING WITHOUT ACTIVESUPPORT
+# class PhoneNumberFormatter
+#
+#   def get_number(number)
+#     @phone_array = number.to_s.split('')
+#   end
+#
+#   def area_code
+#     @phone_array.first(3)
+#   end
+#
+#   def three_digits
+#     @phone_array[3..5]
+#   end
+#
+#   def four_digits
+#     @phone_array[6..10]
+#   end
+#
+#   def format_one
+#     puts "(#{area_code.join}) #{three_digits.join}-#{four_digits.join}"
+#   end
+#
+#   def format_two
+#     puts "#{area_code.join}-#{three_digits.join}-#{four_digits.join}"
+#   end
+#
+# end
 
 # ORIGINAL THAT DID NOT FOLLOW ASSIGNMENT SPECS
 # class PhoneNumberFormatter
