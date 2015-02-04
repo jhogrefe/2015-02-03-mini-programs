@@ -15,5 +15,4 @@ class Marvel
 
 end
 
-
 binding.pry
