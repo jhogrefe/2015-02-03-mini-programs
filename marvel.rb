@@ -4,7 +4,7 @@ require 'marvelite'
 class Marvel
 
   def initialize
-    @client = Marvelite::API::Client.new( :public_key => 'c5649d55aa46e4cb9e793be4ab7baa3b', :private_key => 'caee2de1e266812ee4df12817998640309c66929')
+    @client = Marvelite::API::Client.new( :public_key => 'public_key', :private_key => 'private_key')
   end
 
   def character_search
