@@ -2,37 +2,40 @@ require 'pry'
 require 'active_support'
 require 'active_support/core_ext/array/conversions'
 
+# Public: WordConnector class
+# Connects an array of strings into a single sentence with an "and"
+# between the last two strings.
+#
+# Attributes:
+# None.
+#
+# Methods:
+# #merge_strings_with_and
 
 class WordConnector
 
-  def blue_red_green_merge_with_and(*words)
+  # Public: merge_strings_with_and method
+  # Pushes a string of words into an array and then connects the
+  # strings into a single sentence with an "and" between the last
+  # two strings.
+  #
+  # Parameters:
+  # words - uses the splat operator to collect the strings that are
+  #         being pushed into the array.
+  #
+  # Returns:
+  # A string made from the array with "and" added between the last
+  # two strings.
+  #
+  # State Changes:
+  # None.
+  
+  def merge_strings_with_and(*words)
     words.to_sentence
   end
 
-  def blue_red_merge_with_and(*words)
-    words.to_sentence
-  end
-    
+# End of the class.    
 end
-
-
-# ORIGINAL - NO ACTIVE SUPPORT
-# class WordConnector
-#
-#   def initialize
-#     @blue_red_green = ["Blue", "Red", "Green"]
-#     @blue_red = ["Blue", "Red"]
-#   end
-#
-#   def blue_red_green_merge_with_and
-#     @blue_red_green[0..1].join(', ') + " and " + @blue_red_green[2]
-#   end
-#
-#   def blue_red_merge_with_and
-#     @blue_red[0] + " and " + @blue_red[1]
-#   end
-#
-# end
 
 
 binding.pry
