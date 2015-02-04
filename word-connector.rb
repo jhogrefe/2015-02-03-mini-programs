@@ -4,7 +4,8 @@ require 'active_support/core_ext/array/conversions'
 
 # Public: WordConnector class
 # Connects an array of strings into a single sentence with an "and"
-# between the last two strings.
+# between the last two strings using the Active Support .to_sentence
+# array conversion.
 #
 # Attributes:
 # None.
